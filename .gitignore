@@ -1,0 +1,13 @@
+# Backend
+backend/.env
+__pycache__/
+backend/*.pyc
+
+# Frontend
+__pycache__/
+frontend/*.pyc
+
+# Common
+.vscode/
+*.log
+emergency_response/
