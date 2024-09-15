@@ -5,13 +5,13 @@ from twilio.twiml.voice_response import VoiceResponse, Start
 import logging
 
 router = APIRouter()
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 async def handle_call(request: Request):
     logging.info("Received call request")
     try:
         form_data = await request.form()
-        logging.debug(f"Form data: {form_data}")
+        # logging.debug(f"Form data: {form_data}")
 
         response = VoiceResponse()
         start = Start()
@@ -22,7 +22,7 @@ async def handle_call(request: Request):
         response.pause(length=60)  # Keep the call active for 60 seconds
 
         logging.info(f'Incoming call from {form_data.get("From", "Unknown")}')
-        logging.debug(f"TwiML response: {response}")
+        # logging.debug(f"TwiML response: {response}")
         return Response(content=str(response), media_type="application/xml")
     except Exception as e:
         logging.error(f"Error in call handler: {str(e)}", exc_info=True)

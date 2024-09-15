@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     speech_key: str
     speech_region: str
     openai_api_key: str
+    mongodb_url:str
+    mongodb_db_name:str
+    mongodb_collection_name:str
     class Config:
         env_file = ".env"
 

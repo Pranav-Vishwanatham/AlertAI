@@ -11,3 +11,4 @@ frontend/*.pyc
 .vscode/
 *.log
 emergency_response/
+transcripts*

@@ -10,19 +10,19 @@ async def validate_twilio_request(request: Request) -> bool:
 
     # Get the URL of the request
     url = str(request.url)
-    logging.debug(f"Request URL: {url}")
+    # logging.debug(f"Request URL: {url}")
 
     # Get the POST data
     form_data = await request.form()
     post_data = {key: value for key, value in form_data.items()}
-    logging.debug(f"POST data: {post_data}")
+    # logging.debug(f"POST data: {post_data}")
 
     # Get the X-Twilio-Signature header
     signature = request.headers.get('X-Twilio-Signature', '')
-    logging.debug(f"Twilio Signature: {signature}")
+    # logging.debug(f"Twilio Signature: {signature}")
 
     # Validate the request
     is_valid = validator.validate(url, post_data, signature)
-    logging.debug(f"Request validation result: {is_valid}")
+    # logging.debug(f"Request validation result: {is_valid}")
 
     return is_valid
