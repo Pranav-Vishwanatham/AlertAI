@@ -1,4 +1,4 @@
-echo "# Emergency Response System
+
 
 This project consists of two main parts:
 
