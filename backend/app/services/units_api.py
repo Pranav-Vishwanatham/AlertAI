@@ -7,7 +7,7 @@ from datetime import datetime
 from fastapi import APIRouter
 from pymongo import MongoClient
 
-MONGODB_URI = "mongodb+srv://pranav0909:alertai@alertaicluster.gahdbz2.mongodb.net/"
+MONGODB_URI = "mongo_db_url"
 DATABASE_NAME = "alertai"
 
 client = MongoClient(MONGODB_URI)
