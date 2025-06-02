@@ -9,7 +9,7 @@ import os
 # ---- CONFIG ----
 MONGODB_URI = os.getenv(
     "MONGODB_URI",
-    "mongodb+srv://pranav0909:alertai@alertaicluster.gahdbz2.mongodb.net/"
+    "mongo_db_url"
 )
 DB_NAME = os.getenv("DB_NAME", "alertai")
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "emergency_calls")
