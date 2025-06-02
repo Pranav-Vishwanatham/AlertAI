@@ -4,7 +4,7 @@ from urllib.parse import quote_plus
 
 username = quote_plus("pranav0909")
 password = quote_plus("alertai")
-uri = f"mongodb+srv://{username}:{password}@alertaicluster.gahdbz2.mongodb.net/"
+uri = f"mongo_db_url"
 client = MongoClient(uri)
 db = client['alertai']
 
