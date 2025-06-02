@@ -3,6 +3,7 @@
 from app.services.azure_speech_service import azure_speech_service
 from app.services.openai_service import openai_service
 from app.services.mongodb_service import mongodb_service
+from app.services.geolocation_service import geolocation_service
 import asyncio
 import logging
 import os
@@ -47,7 +48,8 @@ class EmergencyHandler:
                 # Read the transcript
                 with open(self.transcript_file, 'r') as file:
                     transcript = file.read()
-                
+                # Add coordinates using the new geolocation service
+                emergency_data = await geolocation_service.enrich_with_coordinates(emergency_data)
                 # Insert data into MongoDB
                 mongo_id = await mongodb_service.insert_emergency_data(emergency_data, transcript, call_id)
                 if mongo_id:

@@ -37,6 +37,7 @@ class OpenAIService:
                 "caller_name": "",
                 "critical_info": "",
                 "priority_explanation": ""
+                "recommended_actions": ""
             }}
             """
 

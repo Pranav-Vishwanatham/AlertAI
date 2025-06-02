@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from app.core.config import settings
 import logging
 import asyncio
+from datetime import datetime
 
 class MongoDBService:
     def __init__(self):
@@ -23,6 +24,10 @@ class MongoDBService:
                 "priority_explanation": emergency_data.get("priority_explanation"),
                 "recommended_actions": emergency_data.get("recommended_actions"),
                 "transcript": transcript,
+                "time": datetime.utcnow(),
+                "latitude": emergency_data.get("latitude"),
+                "longitude": emergency_data.get("longitude"),
+                "status": "unassigned"
             }
             # Use run_in_executor to run the synchronous insert operation asynchronously
             result = await asyncio.get_event_loop().run_in_executor(
